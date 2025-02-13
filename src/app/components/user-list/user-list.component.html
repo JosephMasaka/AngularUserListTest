@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>User List</h2>
+    
+    <input type="text" placeholder="Search users..." (input)="onSearch($event)">
+  
+    <p *ngIf="isLoading">Loading...</p>
+  
+    <ul *ngIf="!isLoading">
+      <li *ngFor="let user of filteredUsers">
+        <strong>{{ user.name }}</strong> - {{ user.email }} - {{ user.phone }}
+      </li>
+    </ul>
+  </div>
+  
